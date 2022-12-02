@@ -1,4 +1,4 @@
-export const text = `6529
+export const TEXT = `6529
 8085
 4534
 1503

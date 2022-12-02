@@ -1,22 +1,33 @@
-import { text } from "./input";
+import { EXECUTE_ALL_CHALLENGES } from "../../config";
+import { sum } from "../../utils";
+import { TEXT } from "./input";
 
-export function day1() {
-  const numbers = text
-    .trim()
+function runChallenge() {
+  const numbers = TEXT.trim()
     .split("\n\n")
     .map((str) => str.split("\n").map(Number));
 
   const biggestSum = numbers
-    .map((arr) => arr.reduce((partialSum, a) => partialSum + a, 0))
+    .map((arr) => arr.reduce(sum, 0))
     .sort((a, b) => b - a);
 
-  const top3Sum = biggestSum
-    .slice(0, 3)
-    .reduce((partialSum, a) => partialSum + a, 0);
+  const top3Sum = biggestSum.slice(0, 3).reduce(sum, 0);
 
   return {
     part1: biggestSum[0],
     part2: top3Sum,
-    time: 18, //minutes
+  };
+}
+
+export function day1() {
+  // Cached results as it can be expensive to run all the challenges at once.
+  return {
+    ...(!EXECUTE_ALL_CHALLENGES
+      ? runChallenge()
+      : {
+          part1: 72718,
+          part2: 213089,
+        }),
+    time: 18,
   };
 }
