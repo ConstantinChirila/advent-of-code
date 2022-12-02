@@ -33,7 +33,7 @@ function runChallenge() {
 }
 
 export function day2() {
-  // Cached results as it can be expensive to run all the challenges at once.
+  // Cached results as it can be expensive to run all the challenges at once. Used to present on the UI
   return {
     ...(EXECUTE_ALL_CHALLENGES
       ? runChallenge()
