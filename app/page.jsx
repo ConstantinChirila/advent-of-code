@@ -34,7 +34,7 @@ export default function Home() {
             >
               Javascript
             </Link>{" "}
-            and secondly try to do it in
+            and secondly try to do it in {""}
             <Link href="https://golang.org/" target="_blank">
               Go
             </Link>{" "}
