@@ -2,19 +2,9 @@ import { text } from "./input";
 
 export function day1() {
   const numbers = text
-    .split(/\n/)
-    .map((i) => (i ? i : "|"))
-    .join(" ")
-    .split("|")
-    .map((i) =>
-      i
-        ? i
-            .trim()
-            .split(" ")
-            .map((i) => parseInt(i))
-        : null
-    )
-    .filter(Boolean);
+    .trim()
+    .split("\n\n")
+    .map((str) => str.split("\n").map(Number));
 
   const biggestSum = numbers
     .map((arr) => arr.reduce((partialSum, a) => partialSum + a, 0))
