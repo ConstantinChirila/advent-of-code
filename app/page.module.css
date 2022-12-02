@@ -70,9 +70,8 @@ table.table th {
   padding: 1rem;
   text-align: center;
 }
-table.table td a {
-  color: #0070f3;
-}
-table.table td a:hover {
-  text-decoration: underline;
+
+.content {
+  max-width: 54rem;
+  line-height: 1.8;
 }
