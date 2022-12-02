@@ -1,9 +1,10 @@
 "use client";
+import Link from "next/link";
+import { GITHUB_URL } from "../config";
 import { tableData } from "./constants";
 import styles from "./page.module.css";
 
 export default function Home() {
-  tableData;
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -17,7 +18,10 @@ export default function Home() {
               <th>Day</th>
               <th>Result Part 1</th>
               <th>Result Part 2</th>
-              <th>Time</th>
+              <th>Time (JS only)</th>
+              <th>Javascript code </th>
+              <th>GO code </th>
+              <th>Input data</th>
             </tr>
           </thead>
           <tbody>
@@ -27,6 +31,34 @@ export default function Home() {
                 <td>{day.part1}</td>
                 <td>{day.part2}</td>
                 <td>{day.time} min</td>
+                <td>
+                  <Link
+                    href={`${GITHUB_URL}/day${index + 1}/index.js`}
+                    target="_blank"
+                  >
+                    Code.js
+                  </Link>
+                </td>
+                <td>
+                  {day.hasGo ? (
+                    <Link
+                      href={`${GITHUB_URL}/day${index + 1}/go/index.go`}
+                      target="_blank"
+                    >
+                      Code.go
+                    </Link>
+                  ) : (
+                    "N/A"
+                  )}
+                </td>
+                <td>
+                  <Link
+                    href={`${GITHUB_URL}/day${index + 1}/input.js`}
+                    target="_blank"
+                  >
+                    Input Data
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>

@@ -29,5 +29,6 @@ export function day1() {
           part2: 213089,
         }),
     time: 18,
+    hasGo: true,
   };
 }
