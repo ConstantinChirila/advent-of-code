@@ -10,9 +10,6 @@ import (
 )
 
 func main() {
-	defer timeTrack(time.Now(), "code")
-
-   
 	content, err := os.ReadFile("input.txt")
 
 	if err != nil { log.Fatal(err) }
@@ -52,12 +49,4 @@ func main() {
 
 	fmt.Println("Result 1: ", sumArray[0])
 	fmt.Println("Result 2: ", sumArray[0] +  sumArray[1]+  sumArray[2])
-
-	
-}
-
-
-func timeTrack(start time.Time, name string) {
-    elapsed := time.Since(start)
-    log.Printf("%s took %s", name, elapsed)
 }
