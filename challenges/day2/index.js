@@ -13,29 +13,30 @@ function runChallenge() {
     .split("\n\n")
     .map((str) => str.split("\n"))[0];
 
-  const calculateScore = games.map((game) => {
-    const [opponent, player] = game.split(" ");
-    const gameResult = NORMAL_GAME_RESULT[opponent][player];
-    return SCORE[gameResult] + SCORE[player];
-  });
+  let totalScorePart1 = 0;
+  let totalScorePart2 = 0;
 
-  const calculateScorePart2 = games.map((game) => {
+  games.forEach((game) => {
     const [opponent, player] = game.split(" ");
-    const gameResult = GAME_RESULT_PART2[opponent][player];
+
+    const gameResult = NORMAL_GAME_RESULT[opponent][player];
+    totalScorePart1 += SCORE[gameResult] + SCORE[player];
+
+    const gameResultPart2 = GAME_RESULT_PART2[opponent][player];
     const desired = DESIRED_RESULT[player];
-    return SCORE[gameResult] + SCORE[desired];
+    totalScorePart2 += SCORE[gameResultPart2] + SCORE[desired];
   });
 
   return {
-    part1: calculateScore.reduce(sum, 0),
-    part2: calculateScorePart2.reduce(sum, 0),
+    part1: totalScorePart1,
+    part2: totalScorePart2,
   };
 }
 
 export function day2() {
   // Cached results as it can be expensive to run all the challenges at once.
   return {
-    ...(EXECUTE_ALL_CHALLENGES
+    ...(!EXECUTE_ALL_CHALLENGES
       ? runChallenge()
       : {
           part1: 13675,
