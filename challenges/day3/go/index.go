@@ -71,4 +71,3 @@ func getGroups(items []string) [][]string {
 
 	return groups
 }
-

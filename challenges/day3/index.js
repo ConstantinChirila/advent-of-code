@@ -1,7 +1,7 @@
 import { EXECUTE_ALL_CHALLENGES } from "../../config";
 import { sum } from "../../utils";
 import { TEXT } from "./input";
-//get alphabet in array
+
 const CHARACTER_ORDER =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
