@@ -68,6 +68,6 @@ export function day3() {
           part2: 2817,
         }),
     time: 28,
-    hasGo: false,
+    hasGo: true,
   };
 }
