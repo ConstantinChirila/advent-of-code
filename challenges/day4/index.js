@@ -63,6 +63,6 @@ export function day4() {
           part2: 801,
         }),
     time: 14,
-    hasGo: false,
+    hasGo: true,
   };
 }
