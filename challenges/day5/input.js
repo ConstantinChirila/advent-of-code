@@ -1,14 +1,12 @@
-export const INITIAL = [
-  ["Q", "M", "G", "C", "L"],
-  ["R", "D", "L", "C", "T", "F", "H", "G"],
-  ["V", "J", "F", "N", "M", "T", "W", "R"],
-  ["J", "F", "D", "V", "Q", "P"],
-  ["N", "F", "M", "S", "L", "B", "T"],
-  ["R", "N", "V", "H", "C", "D", "P"],
-  ["H", "C", "T"],
-  ["G", "S", "J", "V", "Z", "N", "H", "P"],
-  ["Z", "F", "J", "G"],
-];
+export const INITIAL = `     [G] [R]                 [P]     
+     [H] [W]     [T] [P]     [H]     
+     [F] [T] [P] [B] [D]     [N]     
+ [L] [T] [M] [Q] [L] [C]     [Z]     
+ [C] [C] [N] [V] [S] [H]     [V] [G] 
+ [G] [L] [F] [D] [M] [V] [T] [J] [H] 
+ [M] [D] [J] [F] [F] [N] [C] [S] [F] 
+ [Q] [R] [V] [J] [N] [R] [H] [G] [Z] 
+  1   2   3   4   5   6   7   8   9  `;
 
 export const INSTRUCTIONS = `move 5 from 8 to 2
 move 2 from 4 to 5

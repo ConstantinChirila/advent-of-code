@@ -32,8 +32,28 @@ function runChallenge() {
   };
 }
 
+function getStacks() {
+  const convertedStack = INITIAL.split("\n").map((str) => {
+    return str
+      .replaceAll("    ", " [-] ")
+      .replaceAll(" ", "")
+      .replaceAll("[", "")
+      .replaceAll("]", "")
+      .split("");
+  });
+  const stackArray = [[], [], [], [], [], [], [], [], []];
+  convertedStack.splice(0, 8).forEach((arr, i) => {
+    stackArray.forEach((_, index) => {
+      if (arr[index] !== "-") {
+        stackArray[index] = [...stackArray[index], arr[index]];
+      }
+    });
+  });
+  return stackArray.map((arr) => arr.reverse());
+}
+
 function moveCrates(moves, part2) {
-  const finalState = cloneDeep(INITIAL);
+  const finalState = getStacks();
   for (const move of moves) {
     const [quantity, from, to] = move;
     const fromStack = finalState[from - 1];
