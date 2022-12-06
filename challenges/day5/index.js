@@ -78,6 +78,6 @@ export function day5() {
           part2: "GCFGLDNJZ",
         }),
     time: 32,
-    hasGo: false,
+    hasGo: true,
   };
 }
